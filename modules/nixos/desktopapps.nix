@@ -15,7 +15,6 @@
     anki-bin
     mpv #for anki
     
-    
   ];
 
 }

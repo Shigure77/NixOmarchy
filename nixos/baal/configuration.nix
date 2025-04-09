@@ -71,9 +71,6 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  #check flatpak.nix
-  services.flatpak.enable = true;
-
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -115,7 +112,7 @@
   ];
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

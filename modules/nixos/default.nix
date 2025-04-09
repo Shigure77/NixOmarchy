@@ -9,7 +9,7 @@
     ./desktopapps.nix
     ./vscode.nix
     ./wireguard.nix
-    #./flatpak.nix
+    ./flatpak.nix
   ];
 
 }

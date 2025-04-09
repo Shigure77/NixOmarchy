@@ -55,7 +55,7 @@
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
         "io.missioncenter.MissionCenter.desktop"
-        "firefox.desktop"
+        "app.zen_browser.zen.desktop"
         "steam.desktop"
         "discord.desktop"
         "Alacritty.desktop"

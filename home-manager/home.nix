@@ -70,11 +70,17 @@
     dconf2nix
     plex-desktop
     discord
+    nfs-utils
+    nfstrace #nfs monitoring tool
     
   ];
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName  = "Keion";
+    userEmail = "keioncollins@gmail.com";
 
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
