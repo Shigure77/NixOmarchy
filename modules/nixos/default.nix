@@ -10,6 +10,7 @@
     ./vscode.nix
     ./wireguard.nix
     ./flatpak.nix
+    ./fonts.nix
   ];
 
 }
