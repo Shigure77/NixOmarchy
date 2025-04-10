@@ -1,6 +1,9 @@
 { pkgs, ... }: {
+  networking.firewall.allowedUDPPorts = [ 3285 ];
+  networking.firewall.checkReversePath = false;
   networking.wg-quick.interfaces = {
     wg0 = {
+      #configFile = "/etc/wireguard/WireGuard-NixGateway.conf";
       # IP address of this machine in the *tunnel network*
       address = ["192.168.3.2/29"];
 
@@ -9,7 +12,7 @@
       listenPort = 3285;
 
       # Path to the private key file.
-      privateKeyFile = "/etc/wireguard/private.key";
+      privateKeyFile = "/etc/wireguard/privatekey";
 
       peers = [{
         publicKey = "9i87Nrn3AXIYygIodP8LwzbwntZFGxZGdboH2vfWLFg=";
