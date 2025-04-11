@@ -22,15 +22,15 @@
     wg0 = {
       #configFile = "/etc/wireguard/WireGuard-NixGateway.conf";
       # IP address of this machine in the *tunnel network*
-      address = ["192.168.3.2/29"];
-      #dns = ["192.168.3.1/29"];
+      address = [ "192.168.3.2/32" ];
+      dns = ["192.168.3.1"];
 
       # To match firewall allowedUDPPorts (without this wg
       # uses random port numbers).
       listenPort = 3285;
 
       # Path to the private key file.
-      privateKeyFile = "/etc/wireguard/privatekey.wg";
+      privateKeyFile = "/etc/wireguard/private.key";
 
       peers = [{
         publicKey = "9i87Nrn3AXIYygIodP8LwzbwntZFGxZGdboH2vfWLFg=";
