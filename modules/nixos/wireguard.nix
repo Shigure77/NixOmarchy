@@ -1,14 +1,15 @@
-{ pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   networking.firewall = {
     allowedUDPPorts = [ 51820 3285 ];
     allowedTCPPorts = [ 51820 3285 ];
-    checkReversePath = false;
+    checkReversePath = "loose";
   };
   networking.wg-quick.interfaces = {
     wg0 = {
       #configFile = "/etc/wireguard/WireGuard-NixGateway.conf";
       # IP address of this machine in the *tunnel network*
       address = ["192.168.3.2/29"];
+      gateway = ["192.168.3.1/29"]
 
       # To match firewall allowedUDPPorts (without this wg
       # uses random port numbers).
