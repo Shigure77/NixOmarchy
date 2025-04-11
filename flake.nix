@@ -45,7 +45,7 @@
           home-manager.users.keion = { 
             imports = [
             ./home-manager/home.nix
-            catppuccin.homeManagerModules.catppuccin
+            catppuccin.homeModules.catppuccin
             ];
           };
         }

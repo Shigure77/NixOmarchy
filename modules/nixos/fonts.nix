@@ -4,7 +4,7 @@
   fonts = {
     enableDefaultPackages = true;
 
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts
       ubuntu_font_family
       unifont
