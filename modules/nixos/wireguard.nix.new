@@ -1,0 +1,40 @@
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  networking.firewall.allowedUDPPorts = [3285];
+  #networking.checkReversePath = false;
+  networking.useNetworkd = true;  
+  systemd.network = {
+    enable = true;
+    netdevs = {
+      "50-wg0" = {
+        netdevConfig = {
+          Kind = "wireguard";
+          Name = "wg0";
+          MTUBytes = "1300";
+        };
+        wireguardConfig = {
+          PrivateKeyFile = "/etc/wireguard/private.key";
+          ListenPort = 3285;
+        };
+        wireguardPeers = [
+          {
+            PublicKey = "9i87Nrn3AXIYygIodP8LwzbwntZFGxZGdboH2vfWLFg=";
+            AllowedIPs = ["0.0.0.0/0"];
+          }
+        ];
+      };
+    };
+    networks.wg0 = {
+      matchConfig.Name = "wg0";
+      address = ["10.100.0.1/24"];
+      networkConfig = {
+        IPMasquerade = "ipv4";
+        IPv4Forwarding = true;
+      };
+    };
+  };
+}
