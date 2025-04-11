@@ -1,6 +1,9 @@
 { pkgs, ... }: {
-  networking.firewall.allowedUDPPorts = [ 3285 ];
-  networking.firewall.checkReversePath = false;
+  networking.firewall = {
+    allowedUDPPorts = [ 51820 3285 ];
+    allowedTCPPorts = [ 51820 3285 ];
+    checkReversePath = false;
+  };
   networking.wg-quick.interfaces = {
     wg0 = {
       #configFile = "/etc/wireguard/WireGuard-NixGateway.conf";
