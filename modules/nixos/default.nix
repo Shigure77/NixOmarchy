@@ -11,6 +11,7 @@
     ./wireguard.nix
     ./flatpak.nix
     ./fonts.nix
+    ./nfs.nix
   ];
 
 }

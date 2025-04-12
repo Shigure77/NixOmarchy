@@ -60,8 +60,12 @@
         "discord.desktop"
         "Alacritty.desktop"
         "codium.desktop"
+        "anki.desktop"
+        "plex-desktop.desktop"
         "org.flameshot.Flameshot.desktop"
         "org.gnome.Settings.desktop"
+        "qdirstat.desktop"
+        "io.github.arunsivaramanneo.GPUViewer.desktop"
         "org.gnome.Extensions.desktop"      
       ];
 
