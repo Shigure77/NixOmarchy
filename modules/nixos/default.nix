@@ -12,6 +12,7 @@
     ./flatpak.nix
     ./fonts.nix
     ./nfs.nix
+    ./nvf.nix
   ];
 
 }

@@ -72,8 +72,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      picture-uri = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
-      picture-uri-dark = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
+      # picture-uri = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
+      # picture-uri-dark = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };

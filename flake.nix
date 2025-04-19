@@ -20,11 +20,11 @@
 
   outputs = { self, nixpkgs, nvf, home-manager, catppuccin, stylix, nixos-hardware, nix-flatpak, ... }@inputs: {
 
-    packages."x86_64-linux".default = 
-      (nvf.lib.neovimConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	      modules = [ ./modules/nixos/default.nix ];
-      }).neovim;
+    # packages."x86_64-linux".default = 
+    #   (nvf.lib.neovimConfiguration {
+    #     pkgs = nixpkgs.legacyPackages."x86_64-linux";
+	  #     modules = [ ./modules/nixos/default.nix ];
+    #   }).neovim;
 
     nixosConfigurations.baal = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
@@ -37,6 +37,7 @@
         inputs.minegrub-theme.nixosModules.default
         stylix.nixosModules.stylix
         nix-flatpak.nixosModules.nix-flatpak
+        nvf.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           #home-manager.useGlobal.Pkgs = true;

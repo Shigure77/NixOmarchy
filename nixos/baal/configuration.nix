@@ -26,7 +26,7 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "baal"; # Define your hostname.
   networking.networkmanager.enable = true;
 
   # Set your time zone.
@@ -105,7 +105,7 @@
   environment.systemPackages = with pkgs; [
     vscodium
     git
-    neovim
+    vim
     home-manager 
     wireguard-tools
     nfs-utils
