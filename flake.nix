@@ -15,7 +15,6 @@
     stylix.url = "github:danth/stylix";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
   };
 
   outputs = { self, nixpkgs, nvf, home-manager, catppuccin, stylix, nixos-hardware, nix-flatpak, ... }@inputs: {

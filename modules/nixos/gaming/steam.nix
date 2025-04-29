@@ -9,8 +9,6 @@
     mangohud
     protonup
 
-    lutris
-    bottles #wine prefix manager
   ];
 
   programs.gamemode.enable = true;

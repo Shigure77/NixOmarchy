@@ -13,6 +13,7 @@
     ./fonts.nix
     ./nfs.nix
     ./nvf.nix
+    ./gaming/gameapps.nix
   ];
 
 }

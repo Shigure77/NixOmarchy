@@ -14,6 +14,13 @@ with lib.hm.gvariant;
       window-width = 997;
     };
 
+    "com/usebottles/bottles" = {
+      show-sandbox-warning = false;
+      startup-view = "page_list";
+      window-height = 640;
+      window-width = 880;
+    };
+
     "io/missioncenter/MissionCenter" = {
       performance-page-network-dynamic-scaling = true;
       performance-selected-page = "net-wlp0s20f3";
@@ -33,12 +40,21 @@ with lib.hm.gvariant;
       last-window-size = mkTuple [ 652 480 ];
     };
 
+    "org/gnome/Extensions" = {
+      window-height = 788;
+    };
+
     "org/gnome/Geary" = {
       migrated-config = true;
     };
 
     "org/gnome/TextEditor" = {
       style-scheme = "stylix";
+    };
+
+    "org/gnome/baobab/ui" = {
+      is-maximized = false;
+      window-size = mkTuple [ 960 600 ];
     };
 
     "org/gnome/control-center" = {
@@ -72,8 +88,8 @@ with lib.hm.gvariant;
     "org/gnome/desktop/background" = {
       color-shading-type = "solid";
       picture-options = "zoom";
-      # picture-uri = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
-      # picture-uri-dark = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
+      #picture-uri = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
+      #picture-uri-dark = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
       primary-color = "#000000000000";
       secondary-color = "#000000000000";
     };
@@ -85,13 +101,13 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/interface" = {
       accent-color = "blue";
-      color-scheme = "default";
+      #color-scheme = "prefer-dark";
       cursor-size = 24;
       cursor-theme = "catppuccin-mocha-dark-cursors";
       document-font-name = "DejaVu Serif  11";
       font-name = "DejaVu Sans 12";
       gtk-theme = "catppuccin-mocha-mauve-standard+default";
-      icon-theme = "WhiteSur-dark";
+      icon-theme = "kora-pgrey";
       monospace-font-name = "DejaVu Sans Mono 12";
       show-battery-percentage = true;
     };
@@ -100,8 +116,32 @@ with lib.hm.gvariant;
       application-children = [ "gnome-power-panel" "org-gnome-nautilus" "org-gnome-geary" ];
     };
 
+    "org/gnome/desktop/notifications/application/app-zen-browser-zen" = {
+      application-id = "app.zen_browser.zen.desktop";
+      enable = true;
+      show-banners = true;
+      show-in-lock-screen = true;
+    };
+
+    "org/gnome/desktop/notifications/application/com-usebottles-bottles" = {
+      application-id = "com.usebottles.bottles.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/discord" = {
+      application-id = "discord.desktop";
+      enable = true;
+    };
+
+    "org/gnome/desktop/notifications/application/firefox" = {
+      application-id = "firefox.desktop";
+    };
+
     "org/gnome/desktop/notifications/application/gnome-power-panel" = {
       application-id = "gnome-power-panel.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-console" = {
+      application-id = "org.gnome.Console.desktop";
     };
 
     "org/gnome/desktop/notifications/application/org-gnome-geary" = {
@@ -110,6 +150,10 @@ with lib.hm.gvariant;
 
     "org/gnome/desktop/notifications/application/org-gnome-nautilus" = {
       application-id = "org.gnome.Nautilus.desktop";
+    };
+
+    "org/gnome/desktop/notifications/application/org-gnome-settings" = {
+      application-id = "org.gnome.Settings.desktop";
     };
 
     "org/gnome/desktop/peripherals/touchpad" = {
@@ -145,7 +189,12 @@ with lib.hm.gvariant;
       migrated = true;
     };
 
+    "org/gnome/file-roller/listing" = {
+      show-path = false;
+    };
+
     "org/gnome/gnome-system-monitor" = {
+      current-tab = "resources";
       show-dependencies = false;
       show-whose-processes = "user";
     };
@@ -153,6 +202,9 @@ with lib.hm.gvariant;
     "org/gnome/gnome-system-monitor/proctree" = {
       col-26-visible = false;
       col-26-width = 0;
+      columns-order = [ 0 12 1 2 3 4 6 7 8 9 10 11 13 14 15 16 17 18 19 20 21 22 23 24 25 26 ];
+      sort-col = 0;
+      sort-order = 0;
     };
 
     "org/gnome/mutter" = {
@@ -176,6 +228,23 @@ with lib.hm.gvariant;
       initial-size-file-chooser = mkTuple [ 890 550 ];
     };
 
+    "org/gnome/nm-applet/eap/9c2cb4e9-144c-402d-8799-9bc790cd2c96" = {
+      ignore-ca-cert = false;
+      ignore-phase2-ca-cert = false;
+    };
+
+    "org/gnome/portal/filechooser/app/zen_browser/zen" = {
+      last-folder-path = "/home/keion/Documents";
+    };
+
+    "org/gnome/portal/filechooser/org/flameshot/Flameshot" = {
+      last-folder-path = "/home/keion/Pictures/Screenshots";
+    };
+
+    "org/gnome/portal/filechooser/org/gnome/Settings" = {
+      last-folder-path = "/home/keion/Pictures";
+    };
+
     "org/gnome/portal/filechooser/org/gnome/Settings" = {
       last-folder-path = "/home/keion/nixconfig/assets/images";
     };
@@ -192,9 +261,18 @@ with lib.hm.gvariant;
       sleep-inactive-battery-type = "suspend";
     };
 
+    "org/gnome/shell" = {
+      disable-user-extensions = false;
+      disabled-extensions = [ "thinkpadthermal@moonlight.drive.vk.gmail.com" "places-menu@gnome-shell-extensions.gcampax.github.com" "space-bar@luchrioh" "mediacontrols@cliffniff.github.com" ];
+      #enabled-extensions = [ "dash-to-dock@micxgx.gmail.com" "user-theme@gnome-shell-extensions.gcampax.github.com" "drive-menu@gnome-shell-extensions.gcampax.github.com" "launch-new-instance@gnome-shell-extensions.gcampax.github.com" "Vitals@CoreCoding.com" "tilingshell@ferrarodomenico.com" "clipboard-indicator@tudmotu.com" "compiz-windows-effect@hermes83.github.com" "caffeine@patapon.info" "openbar@neuromorph" "burn-my-windows@schneegans.github.com" "search-light@icedman.github.com" "Media-control@katsarov.org" "quick-settings-tweaks@qwreey" ];
+      #favorite-apps = [ "app.zen_browser.zen.desktop" "org.gnome.Nautilus.desktop" "io.missioncenter.MissionCenter.desktop" "steam.desktop" "discord.desktop" "Alacritty.desktop" "codium.desktop" "anki.desktop" "plex-desktop.desktop" "org.flameshot.Flameshot.desktop" "org.gnome.Settings.desktop" "qdirstat.desktop" "io.github.arunsivaramanneo.GPUViewer.desktop" "org.gnome.Extensions.desktop" ];
+      #last-selected-power-profile = "performance";
+      welcome-dialog-last-shown-version = "47.2";
+    };
+
     "org/gnome/shell/extensions/arcmenu" = {
       arc-menu-icon = 3;
-      #custom-menu-button-icon = "../../assets/images/catppuccin-mocha-rainbow-icon.png";
+      arcmenu-hotkey = [ "Super_L" ];
       custom-menu-button-icon-size = 24.0;
       distro-icon = 22;
       force-menu-location = "Off";
@@ -233,10 +311,15 @@ with lib.hm.gvariant;
       dash-max-icon-size = 48;
       dock-position = "BOTTOM";
       height-fraction = 0.9;
+      hot-keys = false;
       multi-monitor = false;
       preferred-monitor = -2;
       preferred-monitor-by-connector = "eDP-1";
       preview-size-scale = 0.0;
+    };
+
+    "org/gnome/shell/extensions/mediacontrols" = {
+      extension-position = "Center";
     };
 
     "org/gnome/shell/extensions/openbar" = {
@@ -252,13 +335,13 @@ with lib.hm.gvariant;
       bg-change = false;
       bgalpha = 0.95;
       bgcolor = [ "0.118" "0.118" "0.180" ];
-      bgcolor-wmax = ["0.094" "0.094" "0.145"];
+      bgcolor-wmax = [ "0.094" "0.094" "0.145" ];
       bgcolor2 = [ "0.298" "0.192" "0.169" ];
       bgpalette = true;
       bguri = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
       boxalpha = 0.0;
       boxcolor = [ "0.118" "0.118" "0.180" ];
-      bradius = 30.0;
+      bradius = 8.0;
       bwidth = 2.0;
       color-scheme = "default";
       count1 = 379001;
@@ -275,7 +358,7 @@ with lib.hm.gvariant;
       count9 = 102;
       dark-bcolor = [ "0.796" "0.651" "0.969" ];
       dark-bgcolor = [ "0.118" "0.118" "0.180" ];
-      dark-bgcolor-wmax = ["0.094" "0.094" "0.145"];
+      dark-bgcolor-wmax = [ "0.094" "0.094" "0.145" ];
       dark-bgcolor2 = [ "0.298" "0.192" "0.169" ];
       dark-bguri = "file:///nix/store/pm6pnbg4vc6xsws2i2ajihd0zvfqwrhn-nixos-wallpaper-catppuccin.png";
       dark-boxcolor = [ "0.118" "0.118" "0.180" ];
@@ -342,6 +425,7 @@ with lib.hm.gvariant;
       light-palette9 = [ "28" "36" "44" ];
       mbcolor = [ "0.796" "0.651" "0.969" ];
       mbgcolor = [ "0.094" "0.094" "0.145" ];
+      menu-radius = 16.0;
       menustyle = true;
       mfgalpha = 1.0;
       mfgcolor = [ "0.804" "0.839" "0.957" ];
@@ -366,20 +450,41 @@ with lib.hm.gvariant;
       palette8 = [ "36" "36" "44" ];
       palette9 = [ "28" "36" "44" ];
       pause-reload = false;
+      qtoggle-radius = 10.0;
       reloadstyle = false;
       set-notif-position = true;
       shcolor = [ "0.000" "0.000" "0.000" ];
       smbgcolor = [ "0.706" "0.745" "0.996" ];
       smbgoverride = false;
       trigger-autotheme = false;
-      trigger-reload = true;
+      trigger-reload = false;
       vw-color = [ "0.133" "0.212" "0.400" ];
       winbcolor = [ "0.133" "0.212" "0.400" ];
       wmaxbar = true;
     };
 
+    "org/gnome/shell/extensions/search-light" = {
+      animation-speed = 100.0;
+      blur-brightness = 0.6;
+      blur-sigma = 30.0;
+      entry-font-size = 1;
+      monitor-count = 2;
+      popup-at-cursor-monitor = true;
+      preferred-monitor = 0;
+      scale-height = 0.1;
+      scale-width = 0.1;
+      shortcut-search = [ "<Super>r" ];
+      show-panel-icon = false;
+    };
+
     "org/gnome/shell/extensions/space-bar/appearance" = {
+      active-workspace-padding-h = 7;
+      active-workspace-padding-v = 4;
       application-styles = ".space-bar {n  -natural-hpadding: 12px;n}nn.space-bar-workspace-label.active {n  margin: 0 4px;n  background-color: rgba(255,255,255,0.3);n  color: rgba(255,255,255,1);n  border-color: rgba(0,0,0,0);n  font-weight: 700;n  border-radius: 4px;n  border-width: 0px;n  padding: 3px 8px;n}nn.space-bar-workspace-label.inactive {n  margin: 0 4px;n  background-color: rgba(0,0,0,0);n  color: rgba(255,255,255,1);n  border-color: rgba(0,0,0,0);n  font-weight: 700;n  border-radius: 4px;n  border-width: 0px;n  padding: 3px 8px;n}nn.space-bar-workspace-label.inactive.empty {n  margin: 0 4px;n  background-color: rgba(0,0,0,0);n  color: rgba(255,255,255,0.5);n  border-color: rgba(0,0,0,0);n  font-weight: 700;n  border-radius: 4px;n  border-width: 0px;n  padding: 3px 8px;n}";
+      empty-workspace-padding-h = 7;
+      empty-workspace-padding-v = 4;
+      inactive-workspace-padding-h = 7;
+      inactive-workspace-padding-v = 4;
     };
 
     "org/gnome/shell/extensions/space-bar/state" = {
@@ -398,16 +503,25 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = lib.mkForce "catppuccin-mocha-lavender-standard+default";
+      name = "catppuccin-mocha-lavender-standard+default";
     };
 
     "org/gnome/shell/extensions/vitals" = {
+      hot-sensors = [ "_processor_usage_" "_memory_usage_" "__network-rx_max__" "__fan_avg__" ];
       icon-style = 0;
       position-in-panel = 1;
+      show-system = true;
+      use-higher-precision = false;
     };
 
     "org/gnome/shell/world-clocks" = {
       locations = [];
+    };
+
+    "org/gnome/software" = {
+      check-timestamp = mkInt64 1745937435;
+      first-run = false;
+      flatpak-purge-timestamp = mkInt64 1745944568;
     };
 
     "org/gnome/tweaks" = {
@@ -416,7 +530,7 @@ with lib.hm.gvariant;
 
     "org/gtk/gtk4/settings/color-chooser" = {
       custom-colors = [ (mkTuple [ 9.4e-2 9.4e-2 0.145 1.0 ]) (mkTuple [ 0.803922 0.839216 0.956863 1.0 ]) (mkTuple [ 0.604 0.6 0.588 1.0 ]) (mkTuple [ 0.569 0.255 0.675 1.0 ]) (mkTuple [ 0.454902 0.780392 0.92549 1.0 ]) (mkTuple [ 0.392157 0.627451 1.0 1.0 ]) (mkTuple [ 9.4118e-2 9.4118e-2 0.145098 1.0 ]) (mkTuple [ 0.851 0.675 0.635 1.0 ]) ];
-      selected-color = mkTuple [ true 0.803922 0.839216 0.956863 1.0 ];
+      selected-color = mkTuple [ true 1.0 1.0 1.0 1.0 ];
     };
 
     "org/gtk/gtk4/settings/file-chooser" = {
@@ -443,7 +557,7 @@ with lib.hm.gvariant;
       sort-directories-first = false;
       sort-order = "ascending";
       type-format = "category";
-      window-position = mkTuple [ 103 103 ];
+      window-position = mkTuple [ 285 22 ];
       window-size = mkTuple [ 1231 902 ];
     };
 
