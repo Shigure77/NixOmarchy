@@ -242,10 +242,6 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/portal/filechooser/org/gnome/Settings" = {
-      last-folder-path = "/home/keion/Pictures";
-    };
-
-    "org/gnome/portal/filechooser/org/gnome/Settings" = {
       last-folder-path = "/home/keion/nixconfig/assets/images";
     };
 
@@ -503,7 +499,7 @@ with lib.hm.gvariant;
     };
 
     "org/gnome/shell/extensions/user-theme" = {
-      name = "catppuccin-mocha-lavender-standard+default";
+      name = lib.mkForce "catppuccin-mocha-lavender-standard+default";
     };
 
     "org/gnome/shell/extensions/vitals" = {
