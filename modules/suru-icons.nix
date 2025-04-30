@@ -3,6 +3,7 @@
 , fetchFromGitHub ? pkgs.fetchFromGitHub
 , gtk3 ? pkgs.gtk3
 , jdupes ? pkgs.jdupes
+, wget ? pkgs.wget
 }:
 
 stdenvNoCC.mkDerivation rec {
@@ -20,6 +21,7 @@ stdenvNoCC.mkDerivation rec {
   nativeBuildInputs = [ 
     gtk3 
     jdupes
+    wget
   ];
 
   installPhase = ''

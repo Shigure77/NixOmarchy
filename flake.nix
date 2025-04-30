@@ -17,7 +17,12 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, catppuccin, stylix, nixos-hardware, nix-flatpak, ... }@inputs: {
+  outputs = { self, nixpkgs, nvf, home-manager, catppuccin, stylix, nixos-hardware, nix-flatpak, ... }@inputs: 
+  let 
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in
+  {
 
     # packages."x86_64-linux".default = 
     #   (nvf.lib.neovimConfiguration {
@@ -25,7 +30,7 @@
 	  #     modules = [ ./modules/nixos/default.nix ];
     #   }).neovim;
 
-    packages."x86_64-linux".default = (import ./modules/suru-icons.nix { inherit pkgs; });
+    packages.${system}.default = (import ./modules/suru-icons.nix { inherit pkgs; });
 
     nixosConfigurations.baal = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};

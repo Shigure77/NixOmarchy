@@ -109,6 +109,7 @@
     home-manager 
     wireguard-tools
     nfs-utils
+  
   ];
 
   # Enable the OpenSSH daemon.
