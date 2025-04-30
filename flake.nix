@@ -25,6 +25,8 @@
 	  #     modules = [ ./modules/nixos/default.nix ];
     #   }).neovim;
 
+    packages."x86_64-linux".default = (import ./modules/suru-icons.nix { inherit pkgs; });
+
     nixosConfigurations.baal = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";
