@@ -14,7 +14,8 @@
     file-roller
     anki-bin
     mpv #for anki
-    
+    ulauncher 
+    wmctrl #required for ulauncher
   ];
 
 }

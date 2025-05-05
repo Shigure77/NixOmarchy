@@ -6,7 +6,27 @@
   pkgs,
   catppuccin,
   ...
-}: {
+}: 
+let 
+
+  suru-icons = pkgs.stdenvNoCC.mkDerivation {
+    pname = "suru-plus";
+    version = "2019-07-24";
+
+    src = pkgs.fetchzip{
+      url = "https://github.com/gusbemacbe/suru-plus/archive/master.tar.gz";
+      sha256 = "bZSLdRfEUmN4+A63ZVaOaK02L85b4nscXk95EU/trF0=";
+    };
+
+    installPhase = ''
+      mkdir -p $out/share/icons
+      cp -r * $out/share/icons/
+
+    '';
+
+  };
+
+in {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -72,7 +92,7 @@
     discord
     nfs-utils
     nfstrace #nfs monitoring tool
-    
+    suru-icons
   ];
   programs.home-manager.enable = true;
   programs.git = {
