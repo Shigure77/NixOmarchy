@@ -34,6 +34,7 @@
     gnomeExtensions.media-controls
     gnomeExtensions.quick-settings-tweaker
     gnomeExtensions.just-perfection
+    gnomeExtensions.rounded-window-corners-reborn
     gnome-tweaks
   ];
 

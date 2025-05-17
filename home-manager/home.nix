@@ -73,6 +73,10 @@ in {
         update = "sudo nixos-rebuild switch";
       };
     };
+    fish = {
+      enable = true;
+
+    };
   };
   
   gtk = {
@@ -93,6 +97,8 @@ in {
     nfs-utils
     nfstrace #nfs monitoring tool
     suru-icons
+    fishPlugins.puffer
+    fishPlugins.pure
   ];
   programs.home-manager.enable = true;
   programs.git = {
