@@ -40,7 +40,7 @@
         home-manager.nixosModules.home-manager
         {
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.keion = {
+          home-manager.users.youruser = {
             imports = [
               ./home-manager/home.nix
               omarchy-nix.homeManagerModules.default
@@ -49,8 +49,8 @@
           };
           # omarchy-nix configuration (theme, user info, etc.)
           omarchy = {
-            full_name = "Keion";
-            email_address = "keioncollins@gmail.com";
+            full_name = "Your Name";
+            email_address = "you@example.com";
             theme = "gruvbox";
           };
         }

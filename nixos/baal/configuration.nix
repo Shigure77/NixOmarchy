@@ -8,6 +8,12 @@
     ../../modules/nixos/default.nix
   ];
 
+  # WireGuard wg0: copy wireguard-secrets.nix.example → wireguard-secrets.nix, fill in, then uncomment:
+  # nixomarchy.wireguard.wg0Secrets = import ./wireguard-secrets.nix;
+
+  # NFS mount: copy nfs-secrets.nix.example → nfs-secrets.nix, fill in server path, then uncomment:
+  # nixomarchy.nfs.mountSecrets = import ./nfs-secrets.nix;
+
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -33,9 +39,9 @@
 
   services.printing.enable = true;
 
-  users.users.keion = {
+  users.users.youruser = {
     isNormalUser = true;
-    description = "keion";
+    description = "Your Name";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [ ];
   };

@@ -22,8 +22,8 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home = {
-    username = "keion";
-    homeDirectory = "/home/keion";
+    username = "youruser";
+    homeDirectory = "/home/youruser";
     stateVersion = "24.11";
   };
 

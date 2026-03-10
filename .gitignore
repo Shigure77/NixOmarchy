@@ -1,0 +1,5 @@
+# WireGuard secrets (copy from wireguard-secrets.nix.example)
+**/wireguard-secrets.nix
+
+# NFS mount secrets (copy from nfs-secrets.nix.example)
+**/nfs-secrets.nix

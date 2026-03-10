@@ -16,9 +16,17 @@ Theme, terminal, and editor defaults are controlled by omarchy-nix (e.g. `omarch
 
 ## Quick start
 
-1. Clone this repo and use it as your system flake, or add it as a flake input and import `nixosModules.default` / use `nixosConfigurations.baal` as reference.
-2. Set `omarchy.full_name`, `omarchy.email_address`, and `omarchy.theme` in the flake (see `flake.nix`).
-3. Run `nixos-rebuild switch --flake .#baal` (or your hostname).
+1. Clone this repo and use it as your system flake, or add it as a flake input and use `nixosConfigurations.baal` as reference.
+2. In `flake.nix`, set your username (e.g. `home-manager.users.youruser` → your Unix user), and set `omarchy.full_name`, `omarchy.email_address`, and `omarchy.theme`.
+3. In `nixos/baal/configuration.nix`, set `users.users.youruser` to your Unix username (or add your user) and match it in the flake’s `home-manager.users.<youruser>`.
+4. Run `nixos-rebuild switch --flake .#baal` (or your hostname).
+
+## Secrets (WireGuard, NFS, etc.)
+
+Sensitive values live in **gitignored** Nix files so they never get committed:
+
+- **WireGuard:** Copy `nixos/baal/wireguard-secrets.nix.example` to `wireguard-secrets.nix`, fill in your keys/endpoints, then in `nixos/baal/configuration.nix` uncomment the line that imports it. The private key stays at `/etc/wireguard/private.key` (create it separately).
+- **NFS:** Copy `nixos/baal/nfs-secrets.nix.example` to `nfs-secrets.nix`, set `serverPath` (and optionally `mountPoint`/options), then uncomment the NFS import line in `configuration.nix`.
 
 ## Configuration
 
