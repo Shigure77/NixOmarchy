@@ -1,13 +1,10 @@
-{ pkgs, stylix, ...}:
+{ pkgs, ... }:
 
 {
-  # List your module files here
-  # my-module = import ./my-module.nix;
+  # NixOmarchy extras; theme/editor come from omarchy-nix
   imports = [
-    ./catppuccin.nix
     ./consoleapps.nix
     ./desktopapps.nix
-    ./vscode.nix
     ./wireguard.nix
     ./flatpak.nix
     ./fonts.nix
@@ -15,5 +12,4 @@
     ./nvf.nix
     ./gaming/gameapps.nix
   ];
-
 }

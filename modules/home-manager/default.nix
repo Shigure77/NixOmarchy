@@ -1,12 +1,2 @@
-{ pkgs, ...}:
-
-{
-  # List your module files here
-  # my-module = import ./my-module.nix;
-  imports = [
-    ./catppuccin.nix
-    
-  ];
-
-
-}
+# NixOmarchy home-manager extras; theme/editor come from omarchy-nix
+{ pkgs, ... }: { imports = [ ]; }

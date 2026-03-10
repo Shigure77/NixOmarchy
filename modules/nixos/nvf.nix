@@ -8,8 +8,8 @@
       vim = {
         theme = {
           enable = true;
-          #name = "catppuccin"; #handled by catppuccin theme
-          style = "mocha";
+          name = "gruvbox";
+          style = "dark";
         };
         #plugins
         statusline.lualine.enable = true;
