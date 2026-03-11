@@ -8,8 +8,8 @@
       vim = {
         theme = {
           enable = true;
-          name = "gruvbox";
-          style = "dark";
+          name = "tokyo-night";
+          style = "storm";
         };
         #plugins
         statusline.lualine.enable = true;
@@ -27,7 +27,10 @@
         };
         utility.snacks-nvim.enable = true;
         binds.whichKey.enable = true;
-        lsp.trouble.enable = true;
+        lsp = {
+          enable = true;
+          trouble.enable = true;
+        };
 
         # extraPlugins = {
         #   trouble.enable = true;
@@ -38,7 +41,6 @@
         #   which-key-nvim.enable = true;
         # };
         languages = {
-          enable = true;
           enableTreesitter = true;
           nix.enable = true;
           python.enable = true;
