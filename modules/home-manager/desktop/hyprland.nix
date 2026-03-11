@@ -1,21 +1,20 @@
-# Hyprland DE (declarative in Home Manager).
+# Hyprland DE: enable + submodules (envs, input, visuals, autostart, bindings).
 # NixOS must have programs.hyprland.enable + SDDM so the session exists at login.
 { config, pkgs, ... }:
 {
   programs.foot.enable = true;
-  home.packages = [ pkgs.hyprlock ];
+  # hyprlock package is provided by programs.hyprlock in desktop/hyprlock.nix
 
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = {
-      "$mod" = "SUPER";
-      bind = [
-        "$mod, Return, exec, foot"
-        "$mod, Q, killactive"
-        "$mod, L, exec, hyprlock"
-        "$mod, M, exit"
-      ];
-      misc = { vfr = true; };
-    };
+    # Settings are merged from the hyprland/*.nix modules below.
   };
+
+  imports = [
+    ./hyprland/envs.nix
+    ./hyprland/input.nix
+    ./hyprland/visuals.nix
+    ./hyprland/autostart.nix
+    ./hyprland/bindings.nix
+  ];
 }

@@ -18,6 +18,9 @@
     ./apps/firefox.nix
     ./apps/packages.nix
     ./desktop/hyprland.nix
+    ./desktop/hypridle.nix
+    ./desktop/hyprlock.nix
+    ./desktop/hyprpaper.nix
     ./theme/icons.nix
     ./ui/tools.nix
   ];
