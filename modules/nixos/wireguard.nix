@@ -1,6 +1,6 @@
 # WireGuard: firewall is always set; wg0 is only configured when
 # nixomarchy.wireguard.wg0Secrets is set (e.g. from a gitignored file).
-# Copy wireguard-secrets.nix.example to wireguard-secrets.nix and fill in your values.
+# Copy secrets/wireguard-secrets.nix.example to secrets/wireguard-secrets.nix and fill in your values.
 { config, pkgs, lib, ... }:
 
 let

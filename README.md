@@ -23,8 +23,8 @@ Personal NixOS configuration (flake + Home Manager). Host `baal` with hardware, 
 
 Sensitive values live in **gitignored** Nix files:
 
-- **WireGuard:** Copy `nixos/baal/wireguard-secrets.nix.example` to `wireguard-secrets.nix`, fill in keys/endpoints, then in `nixos/baal/configuration.nix` uncomment the import. Create `/etc/wireguard/private.key` separately.
-- **NFS:** Copy `nixos/baal/nfs-secrets.nix.example` to `nfs-secrets.nix`, set `serverPath` (and options), then uncomment the NFS import in `configuration.nix`.
+- **WireGuard:** Copy `secrets/wireguard-secrets.nix.example` to `secrets/wireguard-secrets.nix`, fill in keys/endpoints, then in `nixos/baal/configuration.nix` uncomment the import. Create `/etc/wireguard/private.key` separately.
+- **NFS:** Copy `secrets/nfs-secrets.nix.example` to `secrets/nfs-secrets.nix`, set `serverPath` (and options), then uncomment the NFS import in `configuration.nix`.
 
 ## Configuration
 

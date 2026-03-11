@@ -1,6 +1,6 @@
 # NFS: base support is always enabled; mounts are only configured when
 # nixomarchy.nfs.mountSecrets is set (e.g. from a gitignored file).
-# Copy nfs-secrets.nix.example to nfs-secrets.nix and fill in your values.
+# Copy secrets/nfs-secrets.nix.example to secrets/nfs-secrets.nix and fill in your values.
 { config, lib, pkgs, ... }:
 
 let
