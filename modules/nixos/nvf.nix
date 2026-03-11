@@ -8,7 +8,7 @@
       vim = {
         theme = {
           enable = true;
-          name = "tokyo-night";
+          name = "gruvbox";
           style = "storm";
         };
         #plugins
