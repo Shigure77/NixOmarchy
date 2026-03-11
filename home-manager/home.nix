@@ -8,7 +8,7 @@ let
     version = "2019-07-24";
     src = pkgs.fetchzip {
       url = "https://github.com/gusbemacbe/suru-plus/archive/master.tar.gz";
-      sha256 = "bZSLdRfEUmN4+A63ZVaOaK02L85b4nscXk95EU/trF0=";
+      sha256 = "cclNopwx73BiFB/aHm/aHHbhjFxPL+xwP1L1je5iPwU=";
     };
     installPhase = ''
       mkdir -p $out/share/icons
@@ -52,7 +52,7 @@ in
     plex-desktop
     discord
     nfs-utils
-    nfstrace #nfs monitoring tool
+    #nfstrace #nfs monitoring tool seems broken
     suru-icons
     fishPlugins.puffer
     fishPlugins.pure

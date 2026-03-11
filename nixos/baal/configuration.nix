@@ -39,6 +39,23 @@
 
   services.printing.enable = true;
 
+  # XDG portals (required for Flatpak; need at least one implementation)
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-hyprland
+    ];
+  };
+
+  # Minimal Hyprland (Wayland compositor) + SDDM login
+  programs.hyprland.enable = true;
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
+  services.displayManager.defaultSession = "hyprland";
+
   users.users.keion = {
     isNormalUser = true;
     description = "Keion";

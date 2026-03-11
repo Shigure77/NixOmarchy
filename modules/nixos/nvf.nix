@@ -38,7 +38,7 @@
         #   which-key-nvim.enable = true;
         # };
         languages = {
-          enableLSP = true;
+          enable = true;
           enableTreesitter = true;
           nix.enable = true;
           python.enable = true;

@@ -1,8 +1,6 @@
 {
-  description = "NixOmarchy - Personal NixOS configuration";
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
     home-manager = {
@@ -37,6 +35,7 @@
           home-manager.users.keion = {
             imports = [
               ./home-manager/home.nix
+              ./modules/home-manager/hyprland.nix
               ./modules/home-manager/vscode.nix
             ];
           };
