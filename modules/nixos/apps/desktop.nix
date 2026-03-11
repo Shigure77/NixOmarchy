@@ -1,21 +1,18 @@
 { pkgs, ... }:
-
 {
-
   environment.systemPackages = with pkgs; [
     audacity
-    flameshot #screenshots
+    flameshot
     gpu-viewer
     gparted
-    mission-center #resource monitor
+    mission-center
     wireshark
     flatpak
     qdirstat
     file-roller
     anki-bin
-    mpv #for anki
-    ulauncher 
-    wmctrl #required for ulauncher
+    mpv
+    ulauncher
+    wmctrl
   ];
-
 }

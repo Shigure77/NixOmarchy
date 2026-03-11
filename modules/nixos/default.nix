@@ -1,10 +1,9 @@
 { pkgs, ... }:
-
 {
-  # NixOmarchy extras
   imports = [
-    ./consoleapps.nix
-    ./desktopapps.nix
+    ./apps/console.nix
+    ./apps/desktop.nix
+    ./apps/vscode.nix
     ./wireguard.nix
     ./flatpak.nix
     ./fonts.nix

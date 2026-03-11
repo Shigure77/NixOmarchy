@@ -3,3 +3,6 @@
 
 # NFS mount secrets (copy from nfs-secrets.nix.example)
 **/nfs-secrets.nix
+
+
+nixos/baal/hardware-configuration.nix

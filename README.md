@@ -29,7 +29,7 @@ Sensitive values live in **gitignored** Nix files:
 ## Configuration
 
 - **System:** `nixos/baal/configuration.nix`, `modules/nixos/*.nix`
-- **User:** `home-manager/home.nix`, `modules/home-manager/*.nix`
+- **User:** `modules/home-manager/` (default.nix + core/, terminal/, apps/, desktop/, theme/, ui/)
 
 ## License
 

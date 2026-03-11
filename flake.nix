@@ -17,7 +17,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in
   {
-    #to include suru-icons in the home-manager config, uncomment the following line and add the line to the home-manager/home.nix file
+    # suru-icons are in modules/home-manager/theme/icons.nix
     #packages.${system}.default = (import ./modules/suru-icons.nix { inherit pkgs; });
 
     nixosConfigurations.baal = nixpkgs.lib.nixosSystem {
@@ -33,11 +33,7 @@
         {
           home-manager.extraSpecialArgs = { inherit inputs; };
           home-manager.users.keion = {
-            imports = [
-              ./home-manager/home.nix
-              ./modules/home-manager/hyprland.nix
-              ./modules/home-manager/vscode.nix
-            ];
+            imports = [ ./modules/home-manager/default.nix ];
           };
         }
       ];

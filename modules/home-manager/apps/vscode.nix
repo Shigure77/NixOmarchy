@@ -1,10 +1,8 @@
-# Use VSCodium and add NixOmarchy extensions
+# VSCodium + NixOmarchy extensions
 { config, lib, pkgs, ... }:
-
 {
   programs.vscode = {
     package = pkgs.vscodium;
-    # NixOmarchy extensions
     profiles.default.extensions = lib.mkAfter (with pkgs.vscode-extensions; [
       ms-python.python
       ms-azuretools.vscode-docker

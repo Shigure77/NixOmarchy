@@ -1,11 +1,8 @@
-# Hyprland DE config (declarative in Home Manager).
+# Hyprland DE (declarative in Home Manager).
 # NixOS must have programs.hyprland.enable + SDDM so the session exists at login.
-
 { config, pkgs, ... }:
-
 {
   programs.foot.enable = true;
-
   home.packages = [ pkgs.hyprlock ];
 
   wayland.windowManager.hyprland = {
@@ -18,9 +15,7 @@
         "$mod, L, exec, hyprlock"
         "$mod, M, exit"
       ];
-      misc = {
-        vfr = true;
-      };
+      misc = { vfr = true; };
     };
   };
 }

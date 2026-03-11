@@ -9,7 +9,7 @@
         theme = {
           enable = true;
           name = "gruvbox";
-          style = "storm";
+          style = "dark";
         };
         #plugins
         statusline.lualine.enable = true;
