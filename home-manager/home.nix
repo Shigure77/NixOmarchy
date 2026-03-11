@@ -1,4 +1,4 @@
-# NixOmarchy home config; omarchy-nix provides theme, ghostty, starship, git, etc.
+# NixOmarchy home config
 
 { inputs, config, pkgs, ... }:
 
@@ -22,8 +22,8 @@ in
   nixpkgs.config.allowUnfree = true;
 
   home = {
-    username = "youruser";
-    homeDirectory = "/home/youruser";
+    username = "keion";
+    homeDirectory = "/home/keion";
     stateVersion = "24.11";
   };
 
@@ -45,7 +45,7 @@ in
     home-manager.enable = true;
   };
 
-  # Extra packages (omarchy-nix already provides e.g. vlc, btop, starship)
+  # Extra packages
   home.packages = with pkgs; [
     dconf-editor
     dconf2nix

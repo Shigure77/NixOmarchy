@@ -1,5 +1,5 @@
 {
-  description = "NixOmarchy - Personal NixOS config based on omarchy-nix (Hyprland)";
+  description = "NixOmarchy - Personal NixOS configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -11,14 +11,9 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-    omarchy-nix = {
-      url = "github:henrysipp/omarchy-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-    };
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, nixos-hardware, nix-flatpak, omarchy-nix, ... }@inputs:
+  outputs = { self, nixpkgs, nvf, home-manager, nixos-hardware, nix-flatpak, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -36,22 +31,14 @@
         nixos-hardware.nixosModules.lenovo-thinkpad-x1-12th-gen
         nix-flatpak.nixosModules.nix-flatpak
         nvf.nixosModules.default
-        omarchy-nix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.youruser = {
+          home-manager.users.keion = {
             imports = [
               ./home-manager/home.nix
-              omarchy-nix.homeManagerModules.default
-              ./modules/home-manager/vscode.nix  # VSCodium + extra extensions (after omarchy)
+              ./modules/home-manager/vscode.nix
             ];
-          };
-          # omarchy-nix configuration (theme, user info, etc.)
-          omarchy = {
-            full_name = "Your Name";
-            email_address = "you@example.com";
-            theme = "gruvbox";
           };
         }
       ];

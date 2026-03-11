@@ -1,38 +1,36 @@
 # NixOmarchy
 
-Personal NixOS configuration built on **[omarchy-nix](https://github.com/henrysipp/omarchy-nix)**. Uses Hyprland, greetd, and omarchy-nix for theming and desktop defaults; this repo adds host-specific apps and services.
+Personal NixOS configuration (flake + Home Manager). Host `baal` with hardware, Flatpak, nvf (Neovim), WireGuard, NFS, desktop/console/gaming apps, VSCodium, and Suru Plus icons.
 
 ## What this repo provides
 
-- **Base:** [omarchy-nix](https://github.com/henrysipp/omarchy-nix) (Hyprland, Ghostty, Waybar, themes, etc.)
-- **Extras:** WireGuard, NFS, Flatpak (Zen Browser, OnlyOffice), desktop/console/gaming apps, nvf (Neovim), Suru Plus icons, and optional fonts.
-
-Theme, terminal, and editor defaults are controlled by omarchy-nix (e.g. `omarchy.theme = "tokyo-night"` in the flake).
+- **System:** NixOS flake for host `baal` (Lenovo ThinkPad X1 12th gen), systemd-boot, NetworkManager, printing, optional WireGuard/NFS.
+- **Home:** Home Manager for user `keion` — Firefox, Fish, Zsh, Bash, VSCodium, nvf, and extra packages.
+- **Modules:** WireGuard, NFS, Flatpak (Zen Browser, OnlyOffice), fonts, console/desktop/gaming apps, Steam.
 
 ## Requirements
 
-- NixOS with flakes
+- NixOS with [flakes](https://nixos.wiki/wiki/Flakes) enabled
 - [Home Manager](https://github.com/nix-community/home-manager)
 
 ## Quick start
 
-1. Clone this repo and use it as your system flake, or add it as a flake input and use `nixosConfigurations.baal` as reference.
-2. In `flake.nix`, set your username (e.g. `home-manager.users.youruser` → your Unix user), and set `omarchy.full_name`, `omarchy.email_address`, and `omarchy.theme`.
-3. In `nixos/baal/configuration.nix`, set `users.users.youruser` to your Unix username (or add your user) and match it in the flake’s `home-manager.users.<youruser>`.
-4. Run `nixos-rebuild switch --flake .#baal` (or your hostname).
+1. Clone this repo and use it as your system flake (or add as a flake input).
+2. In `flake.nix`, set `home-manager.users.keion` to your Unix username if different, and add the same user in `nixos/baal/configuration.nix` under `users.users.<username>`.
+3. Run `nixos-rebuild switch --flake .#baal` (or your hostname).
 
-## Secrets (WireGuard, NFS, etc.)
+## Secrets (WireGuard, NFS)
 
-Sensitive values live in **gitignored** Nix files so they never get committed:
+Sensitive values live in **gitignored** Nix files:
 
-- **WireGuard:** Copy `nixos/baal/wireguard-secrets.nix.example` to `wireguard-secrets.nix`, fill in your keys/endpoints, then in `nixos/baal/configuration.nix` uncomment the line that imports it. The private key stays at `/etc/wireguard/private.key` (create it separately).
-- **NFS:** Copy `nixos/baal/nfs-secrets.nix.example` to `nfs-secrets.nix`, set `serverPath` (and optionally `mountPoint`/options), then uncomment the NFS import line in `configuration.nix`.
+- **WireGuard:** Copy `nixos/baal/wireguard-secrets.nix.example` to `wireguard-secrets.nix`, fill in keys/endpoints, then in `nixos/baal/configuration.nix` uncomment the import. Create `/etc/wireguard/private.key` separately.
+- **NFS:** Copy `nixos/baal/nfs-secrets.nix.example` to `nfs-secrets.nix`, set `serverPath` (and options), then uncomment the NFS import in `configuration.nix`.
 
 ## Configuration
 
-- **omarchy-nix options:** [config.nix](https://github.com/henrysipp/omarchy-nix/blob/main/config.nix) — theme, monitors, scale, quick app bindings, `exclude_packages`, etc.
-- **This repo:** Edit `nixos/baal/configuration.nix`, `modules/nixos/*.nix`, and `home-manager/home.nix` for host-specific and extra packages.
+- **System:** `nixos/baal/configuration.nix`, `modules/nixos/*.nix`
+- **User:** `home-manager/home.nix`, `modules/home-manager/*.nix`
 
 ## License
 
-MIT (same as omarchy-nix).
+MIT.

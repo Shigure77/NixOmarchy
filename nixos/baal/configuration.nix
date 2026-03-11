@@ -1,4 +1,4 @@
-# NixOmarchy host configuration (omarchy-nix provides Hyprland, greetd, pipewire, etc.)
+# NixOmarchy host configuration
 
 { inputs, lib, config, pkgs, ... }:
 
@@ -39,9 +39,9 @@
 
   services.printing.enable = true;
 
-  users.users.youruser = {
+  users.users.keion = {
     isNormalUser = true;
-    description = "Your Name";
+    description = "Keion";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = [ ];
   };

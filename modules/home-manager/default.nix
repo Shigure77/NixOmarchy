@@ -1,2 +1,2 @@
-# NixOmarchy home-manager extras; theme/editor come from omarchy-nix
+# NixOmarchy home-manager extras
 { pkgs, ... }: { imports = [ ]; }

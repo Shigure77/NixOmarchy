@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  # NixOmarchy extras; theme/editor come from omarchy-nix
+  # NixOmarchy extras
   imports = [
     ./consoleapps.nix
     ./desktopapps.nix
