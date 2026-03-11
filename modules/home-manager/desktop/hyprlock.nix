@@ -1,9 +1,14 @@
-# Hyprlock theme – standalone (no omanix theme). Customize colors/font as needed.
-{ ... }:
+# Hyprlock theme. Colors from nix-colors colorScheme.
+{ config, nixColorsLib ? null, ... }:
 let
-  bg = "rgba(30, 30, 46, 0.95)";
-  fg = "rgb(205, 214, 244)";
-  accent = "rgb(137, 180, 250)";
+  c = config.colorScheme.palette;
+  stripHash = s: builtins.replaceStrings [ "#" ] [ "" ] (s or "");
+  hexToRgb = hex: "rgb(${nixColorsLib.conversions.hexToRGBString ", " (stripHash hex)})";
+  hexToRgba = hex: a: "rgba(${nixColorsLib.conversions.hexToRGBString ", " (stripHash hex)}, ${a})";
+  # Fallback when nix-colors lib not available (e.g. when not using nix-colors)
+  bg = if nixColorsLib != null then hexToRgba c.base00 "0.95" else "rgba(30, 30, 46, 0.95)";
+  fg = if nixColorsLib != null then hexToRgb c.base05 else "rgb(205, 214, 244)";
+  accent = if nixColorsLib != null then hexToRgb c.base0D else "rgb(137, 180, 250)";
 in
 {
   programs.hyprlock = {

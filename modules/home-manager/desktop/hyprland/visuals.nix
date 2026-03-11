@@ -1,13 +1,17 @@
-# Hyprland visuals – standalone defaults (omanix-style, no theme dependency)
-{ ... }:
+# Hyprland visuals. Border colors from nix-colors colorScheme.
+{ config, ... }:
+let
+  c = config.colorScheme.palette;
+  rgb = key: "rgb(${c.${key}})";
+in
 {
   wayland.windowManager.hyprland.settings = {
     general = {
       gaps_in = 5;
       gaps_out = 10;
       border_size = 2;
-      "col.active_border" = "rgb(89b4fa)";
-      "col.inactive_border" = "rgb(45475a)";
+      "col.active_border" = rgb "base0D";
+      "col.inactive_border" = rgb "base03";
       layout = "dwindle";
       resize_on_border = false;
       allow_tearing = false;

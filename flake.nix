@@ -7,11 +7,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:Misterio77/nix-colors";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, nixos-hardware, nix-flatpak, ... }@inputs:
+  outputs = { self, nixpkgs, nvf, home-manager, nix-colors, nixos-hardware, nix-flatpak, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -31,9 +32,9 @@
         nvf.nixosModules.default
         home-manager.nixosModules.home-manager
         {
-          home-manager.extraSpecialArgs = { inherit inputs; };
+          home-manager.extraSpecialArgs = { inherit inputs; nixColorsLib = nix-colors.lib; };
           home-manager.users.keion = {
-            imports = [ ./modules/home-manager/default.nix ];
+            imports = [ nix-colors.homeManagerModule ./modules/home-manager/default.nix ];
           };
         }
       ];

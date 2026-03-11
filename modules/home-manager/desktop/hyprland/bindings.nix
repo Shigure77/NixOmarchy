@@ -1,15 +1,15 @@
 # Hyprland keybindings (omanix-style, deps commented or replaced).
-# Terminal = foot. Uncomment/adapt launchers when you add: waybar, walker, mako, swayosd, etc.
+# Default terminal = ghostty. Uncomment/adapt launchers when you add: waybar, walker, mako, swayosd, etc.
 { ... }:
 {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    "$terminal" = "foot";
+    "$terminal" = "ghostty";
 
     bind = [
       # Basic
       "$mod, Return, exec, $terminal"
-      "$mod, Q, killactive"
+      "$mod, W, killactive"
       "$mod, L, exec, hyprlock"
       "$mod, M, exit"
       # Window

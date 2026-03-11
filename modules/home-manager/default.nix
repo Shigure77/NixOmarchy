@@ -1,7 +1,10 @@
 # NixOmarchy home-manager: single entry (identity + category modules)
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   nixpkgs.config.allowUnfree = true;
+
+  # Unified theming via nix-colors (used by ghostty, hyprlock, hyprland visuals)
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
   home = {
     username = "keion";
@@ -14,6 +17,7 @@
   imports = [
     ./core/default.nix
     ./terminal/shells.nix
+    ./terminal/ghostty.nix
     ./apps/vscode.nix
     ./apps/firefox.nix
     ./apps/packages.nix
