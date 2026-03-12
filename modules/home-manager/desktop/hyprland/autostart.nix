@@ -5,10 +5,8 @@
     exec-once = [
       "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XCURSOR_THEME XCURSOR_SIZE GDK_SCALE HYPRCURSOR_THEME HYPRCURSOR_SIZE"
       "hypridle"
-      # Uncomment when mako is installed (e.g. home.packages = [ pkgs.mako ]; or services.mako):
-      # "mako"
-      # Uncomment when swayosd is installed (volume/brightness OSD):
-      # "swayosd-server"
+      "mako"
+      "swayosd-server"
       # Uncomment when hyprland-polkit or polkit agent is installed:
       # "systemctl --user start hyprpolkitagent"
       # Uncomment when cliphist is installed (clipboard history; also need wl-paste):

@@ -1,10 +1,10 @@
 # NixOmarchy home-manager: single entry (identity + category modules)
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, nixColorsScheme, ... }:
 {
   nixpkgs.config.allowUnfree = true;
 
-  # Unified theming via nix-colors (used by ghostty, hyprlock, hyprland visuals)
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+  # Unified theming via nix-colors (scheme set in flake.nix as nixColorsScheme)
+  colorScheme = nixColorsScheme;
 
   home = {
     username = "keion";
@@ -22,10 +22,15 @@
     ./apps/firefox.nix
     ./apps/packages.nix
     ./desktop/hyprland.nix
+    ./desktop/walker.nix
     ./desktop/hypridle.nix
     ./desktop/hyprlock.nix
     ./desktop/hyprpaper.nix
     ./theme/icons.nix
     ./ui/tools.nix
+    ./ui/mako.nix
+    ./ui/waybar.nix
+    ./ui/swayosd.nix
+    ./ui/hidden-apps.nix
   ];
 }

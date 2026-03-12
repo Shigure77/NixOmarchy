@@ -2,7 +2,7 @@
 { config, nixColorsLib ? null, ... }:
 let
   c = config.colorScheme.palette;
-  stripHash = s: builtins.replaceStrings [ "#" ] [ "" ] (s or "");
+  stripHash = s: builtins.replaceStrings [ "#" ] [ "" ] (if s == null then "" else s);
   hexToRgb = hex: "rgb(${nixColorsLib.conversions.hexToRGBString ", " (stripHash hex)})";
   hexToRgba = hex: a: "rgba(${nixColorsLib.conversions.hexToRGBString ", " (stripHash hex)}, ${a})";
   # Fallback when nix-colors lib not available (e.g. when not using nix-colors)

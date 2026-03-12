@@ -48,12 +48,8 @@
     ];
   };
 
-  # Minimal Hyprland (Wayland compositor) + SDDM login
+  # Hyprland + login: SDDM is configured by SilentSDDM (modules/nixos/silent-sddm.nix)
   programs.hyprland.enable = true;
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
   services.displayManager.defaultSession = "hyprland";
 
   users.users.keion = {

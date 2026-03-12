@@ -45,6 +45,13 @@
       "$mod, t, resizeactive, 100 0"
       "$mod SHIFT, r, resizeactive, 0 -100"
       "$mod SHIFT, t, resizeactive, 0 100"
+      # App launcher (walker; elephant provides data)
+      "$mod, SPACE, exec, walker"
+      # Notifications (mako)
+      "$mod, COMMA, exec, makoctl dismiss"
+      "$mod SHIFT, COMMA, exec, makoctl dismiss --all"
+      # Waybar toggle
+      "$mod SHIFT, SPACE, exec, pkill -SIGUSR1 waybar"
     ];
 
     bindm = [
@@ -52,12 +59,20 @@
       "$mod, mouse:273, resizewindow"
     ];
 
-    # Uncomment when you add the corresponding programs:
-    # App launcher (e.g. wofi, rofi, or walker): "$mod, SPACE, exec, wofi --show drun"
-    # File manager (e.g. nautilus): "$mod SHIFT, F, exec, nautilus"
-    # Browser: "$mod SHIFT, B, exec, firefox"
-    # Notifications (mako): "$mod, COMMA, exec, makoctl dismiss"
-    # Waybar toggle: "$mod SHIFT, SPACE, exec, pkill -SIGUSR1 waybar"
-    # Volume/brightness OSD (swayosd): use binddel below
+    # Media / OSD (swayosd) – no mod key
+    bindel = [
+      ", XF86AudioRaiseVolume, exec, swayosd-client --output-volume raise"
+      ", XF86AudioLowerVolume, exec, swayosd-client --output-volume lower"
+      ", XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+      ", XF86AudioMicMute, exec, swayosd-client --input-volume mute-toggle"
+      ", XF86MonBrightnessUp, exec, swayosd-client --brightness raise"
+      ", XF86MonBrightnessDown, exec, swayosd-client --brightness lower"
+    ];
+    bindl = [
+      ", XF86AudioNext, exec, swayosd-client --playerctl next"
+      ", XF86AudioPrev, exec, swayosd-client --playerctl previous"
+      ", XF86AudioPlay, exec, swayosd-client --playerctl play-pause"
+      ", XF86AudioPause, exec, swayosd-client --playerctl play-pause"
+    ];
   };
 }
