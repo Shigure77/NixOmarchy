@@ -1,5 +1,5 @@
-# Terminal: zsh + fish plugins
-{ pkgs, ... }:
+# Terminal: zsh
+{ ... }:
 {
   programs.zsh = {
     enable = true;
@@ -12,9 +12,4 @@
       update = "sudo nixos-rebuild switch";
     };
   };
-
-  home.packages = with pkgs; [
-    fishPlugins.puffer
-    fishPlugins.pure
-  ];
 }

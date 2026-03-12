@@ -13,5 +13,9 @@
     pciutils
     wget
     killall
+    eza
+    fzf
+    rsync
+    bat
   ];
 }

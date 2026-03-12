@@ -9,3 +9,5 @@ result
 
 
 nixos/baal/hardware-configuration.nix
+
+flake.lock

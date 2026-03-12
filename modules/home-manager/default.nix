@@ -18,6 +18,7 @@
     ./core/default.nix
     ./terminal/shells.nix
     ./terminal/ghostty.nix
+    ./terminal/aliases.nix
     ./apps/vscode.nix
     ./apps/firefox.nix
     ./apps/packages.nix
