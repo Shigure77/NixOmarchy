@@ -17,7 +17,7 @@
     gnused
     envsubst
     swaybg
-    wlctl
+    # wlctl: provided by NixOS overlay (modules/nixos/wlctl-overlay.nix), not in nixpkgs
     glow
 
     playerctl

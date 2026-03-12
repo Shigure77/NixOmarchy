@@ -16,7 +16,7 @@
       source-code-pro
       ttf_bitstream_vera
       # Nerd Fonts: required for Waybar/status bar icons (󰕾 󰁺 󰤯 etc.)
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      nerd-fonts.jetbrains-mono
     ];
 
     fontconfig = {
