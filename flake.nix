@@ -24,9 +24,18 @@
       url = "github:aashish-thapa/wlctl";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs = {
+        # IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+    
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, nix-colors, nixos-hardware, nix-flatpak, elephant, walker, silentSDDM, wlctl, ... }@inputs:
+  outputs = { self, nixpkgs, nvf, home-manager, nix-colors, nixos-hardware, nix-flatpak, elephant, walker, silentSDDM, wlctl, zen-browser, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -34,7 +43,7 @@
     nixColorsScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
     # Overlay so pkgs.wlctl is available (omanix-style)
     wlctlOverlay = final: prev: {
-      wlctl = inputs.wlctl.packages.${prev.system}.default;
+      wlctl = inputs.wlctl.packages.${prev.stdenv.hostPlatform.system}.default;
     };
   in
   {
@@ -61,6 +70,7 @@
             imports = [
               nix-colors.homeManagerModule
               walker.homeManagerModules.default
+              zen-browser.homeModules.default
               ./modules/home-manager/default.nix
             ];
           };

@@ -21,6 +21,7 @@
     ./apps/vscode.nix
     ./apps/firefox.nix
     ./apps/packages.nix
+    ./apps/zen-browser.nix
     ./desktop/hyprland.nix
     ./desktop/walker.nix
     ./desktop/hypridle.nix
