@@ -8,7 +8,8 @@ let
   accent = hex "base0D";
   barHeight = 34;
   fontSize = 15;
-  fontFamily = "sans-serif";
+  # Nerd Font required for module icons (volume, battery, network, etc.)
+  fontFamily = "JetBrainsMono Nerd Font, sans-serif";
   formatIcons = {
     "1" = "1"; "2" = "2"; "3" = "3"; "4" = "4"; "5" = "5";
     "6" = "6"; "7" = "7"; "8" = "8"; "9" = "9"; "10" = "0";

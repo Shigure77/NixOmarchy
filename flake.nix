@@ -32,10 +32,13 @@
         home-manager.follows = "home-manager";
       };
     };
-    
+    hyprdynamicmonitors = {
+      url = "github:fiffeek/hyprdynamicmonitors";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, nvf, home-manager, nix-colors, nixos-hardware, nix-flatpak, elephant, walker, silentSDDM, wlctl, zen-browser, ... }@inputs:
+  outputs = { self, nixpkgs, nvf, home-manager, nix-colors, nixos-hardware, nix-flatpak, elephant, walker, silentSDDM, wlctl, zen-browser, hyprdynamicmonitors, ... }@inputs:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
@@ -71,6 +74,7 @@
               nix-colors.homeManagerModule
               walker.homeManagerModules.default
               zen-browser.homeModules.default
+              hyprdynamicmonitors.homeManagerModules.default
               ./modules/home-manager/default.nix
             ];
           };

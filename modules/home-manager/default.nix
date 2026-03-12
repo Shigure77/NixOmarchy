@@ -12,11 +12,23 @@
     stateVersion = "24.11";
   };
 
+  # Git identity (used by core/git.nix)
+  nixomarchy.git.user = {
+    name = "Keion";
+    email = "keioncollins@gmail.com";
+  };
+
   systemd.user.startServices = "sd-switch";
 
   imports = [
     ./core/default.nix
-    ./terminal/shells.nix
+    ./core/shell.nix
+    ./core/fonts.nix
+    ./core/gtk.nix
+    ./core/git.nix
+    ./core/languages.nix
+    ./core/bat.nix
+    ./scripts/default.nix
     ./terminal/ghostty.nix
     ./terminal/aliases.nix
     ./apps/vscode.nix
@@ -24,6 +36,7 @@
     ./apps/packages.nix
     ./apps/zen-browser.nix
     ./desktop/hyprland.nix
+    ./desktop/hyprdynamic.nix
     ./desktop/walker.nix
     ./desktop/hypridle.nix
     ./desktop/hyprlock.nix
