@@ -31,16 +31,25 @@
     ./scripts/default.nix
     ./terminal/ghostty.nix
     ./terminal/aliases.nix
+    ./apps/vscode-extensions.nix
     ./apps/vscode.nix
+    ./apps/cursor.nix
     ./apps/firefox.nix
     ./apps/packages.nix
     ./apps/zen-browser.nix
+    ./apps/btop.nix
+    ./apps/jetbrains.nix
+    ./apps/mpv.nix
+    ./apps/neovim.nix
+    ./apps/satty.nix
+    ./apps/spotify.nix
     ./desktop/hyprland.nix
     ./desktop/hyprdynamic.nix
     ./desktop/walker.nix
     ./desktop/hypridle.nix
     ./desktop/hyprlock.nix
     ./desktop/hyprpaper.nix
+    ./desktop/hyprsunset.nix
     ./theme/icons.nix
     ./ui/tools.nix
     ./ui/mako.nix

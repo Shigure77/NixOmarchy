@@ -1,16 +1,19 @@
-
+# Unified aliases for bash and zsh. commonAliases is used by both; remove duplicates/conflicts as needed.
 { config, lib, pkgs, ... }:
-
-{
-  programs.bash.shellAliases = {
+let
+  # Merged (zsh overwrites on duplicate keys); edit to resolve conflicts
+  commonAliases = {
+    
     # List commands
     ll = "eza -alh";
     ls = "eza";
-    tree = "eza --tree --git-ignore";
+    tree = "eza --tree --level=2 --long --icons --git";
+    treelong = "eza --tree --git-ignore";
 
     # Terminal misc (quoted keys required in Nix for names like .. and ...)
     ".." = "cd ..";
     "..." = "cd ../..";
+    "...." = "cd ../../..";
     c = "clear";
     h = "history";
     cdp = "pwd | xclip -selection clipboard";
@@ -21,6 +24,7 @@
 
     # Utilities
     cat = "bat";
+    #cat = "bat -pp"; # Use this to remove the bars from default bat
     top = "btop";
     df = "duf";
     man = "batman";
@@ -30,5 +34,11 @@
     hms = "home-manager switch --impure --flake ~/.config/nixos/#user";
     garbage = "doas nix-collect-garbage --delete-older-than 3d";
     se = "sudoedit";
+    nixhardware = "nixos-generate-config --show-hardware-config > /home/keion/NixOmarchy/hardware-configuration.nix";
+
   };
+in
+{
+  programs.bash.shellAliases = commonAliases;
+  programs.zsh.shellAliases = commonAliases;
 }

@@ -5,6 +5,7 @@
   services.flatpak = {
     enable = true;
     packages = [
+      # Zen: installed via zen-browser flake (modules/home-manager/apps/zen-browser.nix)
       "org.onlyoffice.desktopeditors"
     ];
   };

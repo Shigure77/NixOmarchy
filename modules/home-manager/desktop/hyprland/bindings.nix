@@ -5,6 +5,7 @@
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     "$terminal" = "ghostty";
+    "$browser" = "zen-browser --new-window";  # matches omarhcy bindings (browser)
 
     bind = [
       # Basic
@@ -47,6 +48,9 @@
       "$mod SHIFT, t, resizeactive, 0 100"
       # App launcher (walker; elephant provides data)
       "$mod, SPACE, exec, walker"
+      # Browser (matches omarhcy: Super+B, Super+Alt+B private)
+      "$mod, B, exec, $browser"
+      "$mod ALT, B, exec, $browser --private-window"
       # Notifications (mako)
       "$mod, COMMA, exec, makoctl dismiss"
       "$mod SHIFT, COMMA, exec, makoctl dismiss --all"

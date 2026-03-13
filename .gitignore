@@ -8,6 +8,8 @@ result
 **/nfs-secrets.nix
 
 
-nixos/baal/hardware-configuration.nix
+**/hardware-configuration.nix
 
 flake.lock
+
+omarhcy_config

@@ -1,8 +1,9 @@
-# Screensaver cleanup (from omanix). Uncomment when omanix-screensaver or another screensaver is used.
-# The omanix-screensaver package is from the omanix flake; not available in this config.
-{ pkgs, ... }:
+# Screensaver: omanix-screensaver (from pkgs/) + shutdown cleanup.
+# Hypridle runs the screensaver via desktop/hypridle.nix (listener timeout 1200).
+# Uses overlayedPkgs from flake so the custom package is available to Home Manager.
+{ pkgs, overlayedPkgs ? pkgs, ... }:
 {
-  # home.packages = [ pkgs.omanix-screensaver ];
+  home.packages = [ overlayedPkgs.omanix-screensaver ];
 
   systemd.user.services.omanix-screensaver-cleanup = {
     Unit = {

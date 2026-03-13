@@ -44,10 +44,16 @@
     pkgs = nixpkgs.legacyPackages.${system};
     # Single source of truth: nix-colors scheme (used by Home Manager + SilentSDDM)
     nixColorsScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
-    # Overlay so pkgs.wlctl is available (omanix-style)
+    # Lib (omanix-style): color utils + theme data. Theme colors derived from nix-colors.
+    nixomarchyLib = import ./lib/default.nix { lib = nixpkgs.lib; };
+    nixomarchyActiveTheme = nixomarchyLib.themes.fromNixColors nixColorsScheme;
+    # Overlay: wlctl + omanix-screensaver (from pkgs/)
     wlctlOverlay = final: prev: {
       wlctl = inputs.wlctl.packages.${prev.stdenv.hostPlatform.system}.default;
+      omanix-screensaver = prev.callPackage ./pkgs { };
     };
+    # Ensure Home Manager sees the overlayed pkgs (NixOS uses nixpkgs.overlays; HM gets this via extraSpecialArgs).
+    overlayedPkgs = pkgs.extend wlctlOverlay;
   in
   {
     # suru-icons are in modules/home-manager/theme/icons.nix
@@ -68,7 +74,10 @@
         home-manager.nixosModules.home-manager
         {
           nixpkgs.overlays = [ wlctlOverlay ];
-          home-manager.extraSpecialArgs = { inherit inputs; nixColorsLib = nix-colors.lib; nixColorsScheme = nixColorsScheme; };
+          home-manager.extraSpecialArgs = {
+            inherit inputs nixColorsScheme nixomarchyLib nixomarchyActiveTheme overlayedPkgs;
+            nixColorsLib = nix-colors.lib;
+          };
           home-manager.users.keion = {
             imports = [
               nix-colors.homeManagerModule

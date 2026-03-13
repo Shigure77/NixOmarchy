@@ -54,22 +54,7 @@
         share = true;
       };
 
-      shellAliases = {
-        ".." = "cd ..";
-        "..." = "cd ../..";
-        "...." = "cd ../../..";
-        ls = "eza -lh --group-directories-first --icons=auto";
-        lt = "eza --tree --level=2 --long --icons --git";
-        ll = "eza -l --icons=auto";
-        la = "eza -la --icons=auto";
-        pbcopy = "wl-copy";
-        pbpaste = "wl-paste";
-        cat = "bat -pp";
-
-        rebuild = "sudo nixos-rebuild switch --flake .";
-        nix-clean = "sudo nix-collect-garbage -d";
-        nix-search = "nix search nixpkgs";
-      };
+      # shellAliases: defined in terminal/aliases.nix (commonAliases for bash + zsh)
 
       sessionVariables = {
         EDITOR = "nvim";

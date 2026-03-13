@@ -14,6 +14,7 @@
     ./hyprland/envs.nix
     ./hyprland/input.nix
     ./hyprland/visuals.nix
+    ./hyprland/xdph.nix
     ./hyprland/autostart.nix
     ./hyprland/bindings.nix
   ];

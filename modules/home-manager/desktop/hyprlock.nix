@@ -18,8 +18,9 @@ in
         no_fade_in = false;
         grace = 0;
         disable_loading_bar = true;
-        ignore_empty_input = true;
+        ignore_empty_input = true;  # matches omarhcy_config/hypr/hyprlock.conf
       };
+      animations = { enabled = false; };  # matches omarhcy hyprlock
       background = [{
         path = "";
         blur_passes = 3;

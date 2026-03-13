@@ -1,5 +1,9 @@
+# Zen Browser via zen-browser-flake (github:0xc000022070/zen-browser-flake).
+# Flake is in flake.nix; homeModules.default (beta) is imported there.
 {
-  programs.zen-browser.policies = {
+  programs.zen-browser = {
+    enable = true;
+    policies = {
     AutofillAddressEnabled = true;
     AutofillCreditCardEnabled = false;
     DisableAppUpdate = true;
@@ -16,5 +20,6 @@
       Cryptomining = true;
       Fingerprinting = true;
     };
+  };
   };
 }
