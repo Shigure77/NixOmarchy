@@ -1,9 +1,11 @@
-# Hyprland env vars (from omanix)
+# Hyprland env vars (from omanix). Set GDK_SCALE / QT_SCALE_FACTOR for app-level scaling (e.g. 1.25 = 125%).
 _: {
   wayland.windowManager.hyprland.settings = {
     env = [
       "XCURSOR_THEME,Adwaita"
       "XCURSOR_SIZE,24"
+      # "GDK_SCALE,1.25"       # Uncomment and set for GTK apps (1, 1.25, 1.5, 2, …)
+      # "QT_SCALE_FACTOR,1.25" # Uncomment and set for Qt apps
       "HYPRCURSOR_THEME,Adwaita"
       "HYPRCURSOR_SIZE,24"
       "GDK_BACKEND,wayland,x11,*"

@@ -12,6 +12,7 @@
 
   imports = [
     ./hyprland/envs.nix
+    ./hyprland/monitors.nix
     ./hyprland/input.nix
     ./hyprland/visuals.nix
     ./hyprland/xdph.nix
