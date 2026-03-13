@@ -16,9 +16,9 @@ _: {
     gesture = [
       "3, horizontal, workspace"
     ];
-    # Scroll faster in terminal (matches omarhcy windowrule)
-    windowrulev2 = [
-      "scroll_touchpad, 1.5, tag:terminal"
+    # Scroll faster in terminal (matches omarhcy; windowrule is the current syntax, windowrulev2 was removed)
+    windowrule = [
+      "scroll_touchpad 1.5, match:tag terminal"
     ];
   };
 }
